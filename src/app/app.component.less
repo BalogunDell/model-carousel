@@ -1,0 +1,219 @@
+
+@link-font-size: 13px; 
+@padding: 0 20px;
+@georgiaFontFam: 'Georgia';
+@MontserratFontFam: 'Montserrat';
+
+*h5 {
+  margin: 0;
+}
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0e1d33;
+  overflow: hidden;
+  transition: background-color 0.5s ease-in;
+
+  .section-wrapper {
+    width: 95%;
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+
+    .model-image {
+      width: 50%;
+      min-width: 350px;
+      position: relative;
+
+      nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 180px;
+        height: 97px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: @MontserratFontFam;
+        font-size: 17;
+        z-index: 10000;
+      }
+
+      img {
+        opacity: 0;
+        transition: opacity 0.5s ease-in forwards;
+        
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+
+    .model-info {
+      width: 50%;
+      min-width: 350px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      section.model-info-wrapper {
+        height: 100%;
+        background: white;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+
+          header {
+            white-space: nowrap;
+            color: #191919;
+            font-family: Montserrat;
+            font-size: 10px;
+            font-weight: 500;
+            width: 100%;
+            padding: @padding;
+            height: 50px;
+          }
+
+          section {
+            width: calc(100% - 100px);
+
+            nav.details-nav {
+              margin: 0 75px;
+              width: 90%;
+
+              ul {
+                padding: 0;
+                list-style-type: none;
+                position: relative;
+                
+                li {
+                  display: inline;
+                  padding: 20px;
+                  font-size: 12px;
+                  font-family: @georgiaFontFam;
+                }
+               }
+
+               ul li:last-child {
+                position: absolute;
+                right: 0;
+                top: -28px;
+                font-size: 30px;
+               }
+            }
+
+            section.model-name {
+              margin: 5px 75px;
+              padding: 20px;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              position: relative;
+              width: 85%;
+              
+            div > h1 {
+                width: 100px;
+                margin: 5px 0;
+                font-size: 61px;
+                color: #141414;
+                font-weight: normal;
+                font-family: @georgiaFontFam;
+              }
+
+              h5 {
+                font-family: @georgiaFontFam;
+                color: #4e4e4e;
+                font-size: 15px;
+              }
+            }
+
+          }
+          section.instagram-and-carousel-control {
+            height: 70px;
+            width: 100%;
+            padding: 10px;
+            margin: 35px 0;
+            display: flex;
+            align-items: center;
+
+            nav {
+              transform: rotate(270deg);
+            }
+
+            .carousel-control {
+              width: 75%;
+
+              .control-wrapper {
+                height: 1px;
+                border-radius: 5px;
+                box-shadow: 0 30px 40px 0 rgba(0, 0, 0, 0.16);
+                background-color: black;
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                .current-slide {
+                  text-decoration: none;
+                  height: 80px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-evenly;
+
+                  .next-previous {
+                    font-family: @georgiaFontFam;
+                    font-size: 11px;
+                    font-weight: normal;
+                    font-style: italic;
+                    color: #484646;
+                    white-space: nowrap;
+                  }
+                  
+                  .divider {
+                    height: 3px;
+                    border-radius: 5px;
+                    box-shadow: 0 30px 40px 0 rgba(0, 0, 0, 0.16);
+                    background-color: black;
+                    margin-top: -6px;
+                    width: 100px;
+
+                    
+                    
+                  }
+
+                  .count, .next-previous { margin-left: 20px; }
+                  .count, .next-previous, .divider { 
+                    &.hide {
+                      visibility: hidden;
+                    }
+                   }
+                }
+              }
+            }
+          }
+
+      }
+
+      footer {
+        height: 110px;
+        width: 100%;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+
+        h5 {
+          padding: 30px;
+          font-family: @georgiaFontFam;
+          font-size: 15px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
